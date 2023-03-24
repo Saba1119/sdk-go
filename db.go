@@ -60,22 +60,22 @@ func main() {
 	// snippet-start:[dynamodb.go.create_new_table.create_input]
 	attributeDefinitions := []*dynamodb.AttributeDefinition{
 		{
-			AttributeName: aws.String("Year"),
-			AttributeType: aws.String("N"),
+			AttributeName: aws.String("ID"),
+			AttributeType: aws.String("S"),
 		},
 		{
-			AttributeName: aws.String("Title"),
+			AttributeName: aws.String("Name"),
 			AttributeType: aws.String("S"),
 		},
 	}
 
 	keySchema := []*dynamodb.KeySchemaElement{
 		{
-			AttributeName: aws.String("Year"),
+			AttributeName: aws.String("ID"),
 			KeyType:       aws.String("HASH"),
 		},
 		{
-			AttributeName: aws.String("Title"),
+			AttributeName: aws.String("Name"),
 			KeyType:       aws.String("RANGE"),
 		},
 	}
