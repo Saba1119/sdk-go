@@ -71,10 +71,10 @@ func main() {
 		Threshold:          aws.Float64(5.0),
 		ActionsEnabled:     aws.Bool(true),
 		AlarmActions: []*string{
-			aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:MyTopic", aws.StringValue(sess.Config.Region), "0123456789")),
+			aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:pipeline", aws.StringValue(sess.Config.Region), "554248189203")),
 		},
 		OKActions: []*string{
-			aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:MyTopic", aws.StringValue(sess.Config.Region), "0123456789")),
+			aws.String(fmt.Sprintf("arn:aws:sns:%s:%s:pipeline", aws.StringValue(sess.Config.Region), "554248189203")),
 		},
 		Dimensions: []*cloudwatch.Dimension{
 			{
@@ -90,4 +90,4 @@ func main() {
 
 	fmt.Println("Successfully created CloudWatch log group, filter, and alarm!")
 }
-		
+	
